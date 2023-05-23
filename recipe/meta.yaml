@@ -24,7 +24,6 @@ requirements:
     - wheel
   run:
     - python
-    - pip
     - packaging
     - fastdownload >=0.0.5,<2
     - fastcore >=1.5.29,<1.6
@@ -38,7 +37,7 @@ requirements:
     - scikit-learn
     - scipy
     - spacy <4
-    - pytorch >=1.7,<1.14
+    - pytorch >=1.7,<2.1
 
 test:
   imports:
