@@ -12,16 +12,17 @@ source:
 build:
   entry_points:
     - configure_accelerate=fastai.distributed:configure_accelerate
-  noarch: python
+  # torchvision doesn't support python 3.11, s390x, or ppc64le
+  skip: true  # [py<37 or py>310 or s390x or ppc64le]
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
   host:
-    - python >=3.7
+    - python
     - pip
   run:
-    - python >=3.7
+    - python
     - pip
     - packaging
     - fastdownload >=0.0.5,<2
