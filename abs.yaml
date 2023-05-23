@@ -1,6 +1,0 @@
-channels:
-  melody_org: fastai-2.7.12
-build_parameters:
-  - "--suppress-variables"
-  - "--error-overlinking"
-  - "--error-overdepending"
