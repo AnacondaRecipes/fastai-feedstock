@@ -14,13 +14,14 @@ build:
     - configure_accelerate=fastai.distributed:configure_accelerate
   # torchvision doesn't support python 3.11, s390x, or ppc64le
   skip: true  # [py<37 or py>310 or s390x or ppc64le]
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
     - python
     - pip
+    - wheel
   run:
     - python
     - pip
@@ -50,8 +51,16 @@ test:
 about:
   home: https://github.com/fastai/fastai
   summary: fastai simplifies training fast and accurate neural nets using modern best practices
+  description: |
+    fastai is a deep learning library which provides practitioners with high-level components
+    that can quickly and easily provide state-of-the-art results in standard deep learning
+    domains, and provides researchers with low-level components that can be mixed and matched to
+    build new approaches.
   license: Apache-2.0
+  license_family: Apache
   license_file: LICENSE
+  dev_url: https://github.com/fastai/fastai
+  doc_url: https://docs.fast.ai/
 
 extra:
   recipe-maintainers:
